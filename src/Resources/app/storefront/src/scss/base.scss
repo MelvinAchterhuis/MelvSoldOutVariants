@@ -1,0 +1,20 @@
+.product-detail-configurator-option.no-stock {
+    cursor: not-allowed;
+    label {
+        pointer-events: none;
+        position: relative;
+        overflow: hidden;
+        filter: brightness(85%);
+        &:before{
+            position: absolute;
+            content: '';
+            background: $sw-color-danger;
+            width: 120px;
+            height: 2px;
+            transform: rotate(-45deg);
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+    }
+}

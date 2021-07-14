@@ -1,0 +1,19 @@
+{% sw_extends '@Storefront/storefront/page/product-detail/configurator/select.html.twig' %}
+
+{% block page_product_detail_configurator_select_option %}
+    {% if page.product.variation|length == 1 %}
+        {% set outOfStock = false %}
+        {% for variant in page.extensions.MelvSoldOutVariants %}
+            {% if (option.id == variant.optionIds|first) %}
+                {% if variant.availableStock <= 0 %}
+                    {% set outOfStock = true %}
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+        <option value="{{ option.id }}"{% if selected %} selected="selected"{% endif %} {% if outOfStock %}disabled{% endif %}>
+            {{ option.translated.name }}
+        </option>
+    {% else %}
+        {{ parent() }}
+    {% endif %}
+{% endblock %}

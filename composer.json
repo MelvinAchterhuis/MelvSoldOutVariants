@@ -1,0 +1,24 @@
+{
+    "name": "melvinachterhuis/sold-out-variants-shopware6-plugin",
+    "description": "Highlight sold out before selecting variant",
+    "version": "1.0.0",
+    "type": "shopware-platform-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Melvin Achterhuis"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Melv\\SoldOutVariants\\": "src/"
+        }
+    },
+    "extra": {
+        "shopware-plugin-class": "Melv\\SoldOutVariants\\MelvSoldOutVariants",
+        "label": {
+            "de-DE": "Highlight sold out variants",
+            "en-GB": "Highlight sold out variants"
+        }
+    }
+}
